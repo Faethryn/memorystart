@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Tile : ModelBaseClass
 {
+   
 
     private int _row;
     public int Row { get { return _row; } set { if (_row == value) return; _row = value; OnPropertyChanged(); } }
@@ -20,7 +21,8 @@ public class Tile : ModelBaseClass
     private int _memoryCardId;
     public int MemoryCardId { get { return _memoryCardId; } set { if (_memoryCardId == value) return; _memoryCardId = value; OnPropertyChanged(); } }
 
-    public TileStateBaseClass State {get; set;}
+    private TileStateBaseClass _state;
+    public TileStateBaseClass State { get { return _state; } set { if (_state == value) return; _state = value; OnPropertyChanged(); } }
 
     public Tile(int row, int column, MemoryBoard board)
     {
@@ -35,5 +37,7 @@ public class Tile : ModelBaseClass
         string returnText = $"Tile({Row},{Column}";
         return returnText;
     }
+
+
 
 }

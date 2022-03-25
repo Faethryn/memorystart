@@ -1,4 +1,5 @@
 using Memory.Models;
+using Memory.Models.States;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ public class MemoryBoard : ModelBaseClass
     public List<Tile> PreviewingTiles { get { return _previewingTiles; } set { if (_previewingTiles == value) return;  _previewingTiles = value; OnPropertyChanged(); } }
 
     public bool IsCombinationFound { get { if (PreviewingTiles.Count == 2) { return true; } else return false; }  }
+
+    public BoardStateBaseClass State { get; set; }
 
     public MemoryBoard(int rows, int columns)
     {

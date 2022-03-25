@@ -53,22 +53,29 @@
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Views\TileView.cs" />
+    <Compile Include="Assets\Scripts\Models\States\ITileState.cs" />
     <Compile Include="Assets\Scripts\Models\ModelBaseClass.cs" />
     <Compile Include="Assets\Scripts\MemoryGame.cs" />
-    <Compile Include="Assets\Scripts\Card.cs" />
-    <Compile Include="Assets\Scripts\Models\Tile.cs" />
-    <Compile Include="Assets\Scripts\Models\MemoryBoard.cs" />
-    <Compile Include="Assets\Scripts\Views\ViewBaseClass.cs" />
-    <Compile Include="Assets\Scripts\Views\MemoryBoardView.cs" />
-    <Compile Include="Assets\Scripts\Views\TileView.cs" />
     <Compile Include="Assets\Scripts\Models\States\BoardStates.cs" />
-    <Compile Include="Assets\Scripts\Models\States\TileStates.cs" />
-    <Compile Include="Assets\Scripts\Models\States\ITileState.cs" />
-    <Compile Include="Assets\Scripts\Models\States\TileStateBaseClass.cs" />
-    <Compile Include="Assets\Scripts\Models\States\TileHiddenState.cs" />
-    <Compile Include="Assets\Scripts\Models\States\IBoardState.cs" />
-    <Compile Include="Assets\Scripts\Models\States\BoardStateBaseClass.cs" />
     <Compile Include="Assets\Scripts\Models\States\BoardNoPreviewState.cs" />
+    <Compile Include="Assets\Scripts\Card.cs" />
+    <Compile Include="Assets\Scripts\Views\ViewBaseClass.cs" />
+    <Compile Include="Assets\Scripts\Models\States\BoardStateBaseClass.cs" />
+    <Compile Include="Assets\Scripts\Models\States\IBoardState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\TileHiddenState.cs" />
+    <Compile Include="Assets\Scripts\Models\Tile.cs" />
+    <Compile Include="Assets\Scripts\Models\States\TileStateBaseClass.cs" />
+    <Compile Include="Assets\Scripts\Views\MemoryBoardView.cs" />
+    <Compile Include="Assets\Scripts\Models\States\TileStates.cs" />
+    <Compile Include="Assets\Scripts\Models\MemoryBoard.cs" />
+    <Compile Include="Assets\Scripts\Models\States\BoardOnePreviewState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\TilePreviewingState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\TileFoundState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\BoardTwoFoundState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\BoardTwoPreviewState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\BoardTwoHidingState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\BoardFinishedState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

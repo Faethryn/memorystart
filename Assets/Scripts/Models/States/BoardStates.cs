@@ -8,7 +8,7 @@ namespace Memory.Models.States
     public enum BoardStates
     {
         NoPreview,
-        OnePriveiew,
+        OnePreview,
         TwoPreview,
         TwoFound,
         TwoHiding,

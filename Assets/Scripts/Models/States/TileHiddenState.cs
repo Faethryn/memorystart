@@ -10,7 +10,7 @@ namespace Memory.Models.States
     {
         public TileHiddenState(Tile tile) : base(tile)
         {
-            
+            Tile = tile;
         }
 
         public override TileStates State { get => TileStates.Hidden; } 
