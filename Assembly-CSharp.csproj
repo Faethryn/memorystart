@@ -54,10 +54,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Models\ModelBaseClass.cs" />
+    <Compile Include="Assets\Scripts\MemoryGame.cs" />
     <Compile Include="Assets\Scripts\Card.cs" />
     <Compile Include="Assets\Scripts\Models\Tile.cs" />
     <Compile Include="Assets\Scripts\Models\MemoryBoard.cs" />
-    <Compile Include="Assets\Scripts\MemoryGame.cs" />
+    <Compile Include="Assets\Scripts\Views\ViewBaseClass.cs" />
+    <Compile Include="Assets\Scripts\Views\MemoryBoardView.cs" />
+    <Compile Include="Assets\Scripts\Views\TileView.cs" />
+    <Compile Include="Assets\Scripts\Models\States\BoardStates.cs" />
+    <Compile Include="Assets\Scripts\Models\States\TileStates.cs" />
+    <Compile Include="Assets\Scripts\Models\States\ITileState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\TileStateBaseClass.cs" />
+    <Compile Include="Assets\Scripts\Models\States\TileHiddenState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\IBoardState.cs" />
+    <Compile Include="Assets\Scripts\Models\States\BoardStateBaseClass.cs" />
+    <Compile Include="Assets\Scripts\Models\States\BoardNoPreviewState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

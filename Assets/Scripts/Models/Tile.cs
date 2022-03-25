@@ -1,4 +1,5 @@
 using Memory.Models;
+using Memory.Models.States;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,12 +20,14 @@ public class Tile : ModelBaseClass
     private int _memoryCardId;
     public int MemoryCardId { get { return _memoryCardId; } set { if (_memoryCardId == value) return; _memoryCardId = value; OnPropertyChanged(); } }
 
+    public TileStateBaseClass State {get; set;}
 
     public Tile(int row, int column, MemoryBoard board)
     {
         Row = row;
         Column = column;
         Board = board;
+        State = new TileHiddenState(this);
     }
 
     public override string ToString()

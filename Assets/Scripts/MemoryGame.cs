@@ -1,3 +1,4 @@
+using Memory.Views;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,31 +6,19 @@ using UnityEngine;
 
 public class MemoryGame : MonoBehaviour
 {
-    MemoryBoard _board;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private GameObject _tilePrefab;
+    [SerializeField]
+    private GameObject _memoryBoard;
+
+    private MemoryBoard _storedBoard;
+
+
+    private void Start()
     {
-        _board = new MemoryBoard(3, 3);
-        Debug.Log(_board.Tiles.Count);
-
-        _board.Tiles[1].PropertyChanged += (s, e) =>
-          {
-              string debugString = s.ToString() + e.PropertyName;
-              Debug.Log(debugString);
-          };
+        _storedBoard = new MemoryBoard(3, 3);
+        _memoryBoard.GetComponent<MemoryBoardView>().SetUpMemoryBoardView(_storedBoard, _tilePrefab);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        foreach(Tile tile in _board.Tiles)
-        {
-            tile.MemoryCardId += 2;
-        }
-        
-    }
-
-   
 
 
 }
