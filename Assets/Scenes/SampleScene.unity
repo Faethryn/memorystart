@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilePrefab: {fileID: 0}
   _memoryBoard: {fileID: 0}
+  _memoryBoardView: {fileID: 0}
 --- !u!4 &371062012
 Transform:
   m_ObjectHideFlags: 0
@@ -392,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilePrefab: {fileID: 5576079356538491329, guid: 83337238594738b44b67234673810d10, type: 3}
   _memoryBoard: {fileID: 920808341493186371}
+  _memoryBoardView: {fileID: 920808341493186372}
 --- !u!4 &1972026980
 Transform:
   m_ObjectHideFlags: 0
@@ -477,6 +479,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8057506287657038819, guid: db85d2c5c94842442a38abc3a8067776, type: 3}
   m_PrefabInstance: {fileID: 7139715081388739744}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &920808341493186372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 953690780649411219, guid: db85d2c5c94842442a38abc3a8067776, type: 3}
+  m_PrefabInstance: {fileID: 7139715081388739744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920808341493186371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b29889c7b5b1f4897419fd6c4a6054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7139715081388739744
 PrefabInstance:
   m_ObjectHideFlags: 0

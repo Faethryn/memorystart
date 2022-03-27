@@ -33,15 +33,24 @@ public class MemoryBoard : ModelBaseClass
 
     private void AssignMemoryCardIds()
     {
-       for(int i = 1 ; i <= Rows; i++)
+        int currentIndex = 0;
+        for (int i = 1; i <= Rows; i++)
         {
-            for(int j = 1; j <= Columns; j++)
+            for (int j = 1; j <= Columns; j++)
             {
-                Tiles.Add(new Tile(i, j, this));
+                currentIndex += 1;
+
+                Tile temptile = new Tile(i, j, this);
+                int cardId = Mathf.RoundToInt(currentIndex / 2);
+                temptile.MemoryCardId = cardId;
+                Tiles.Add(temptile);
 
             }
 
         }
+
+       
+
     }
 
     public override string ToString()

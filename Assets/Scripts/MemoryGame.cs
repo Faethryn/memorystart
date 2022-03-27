@@ -11,14 +11,16 @@ public class MemoryGame : MonoBehaviour
     [SerializeField]
     private GameObject _memoryBoard;
 
-   
+    [SerializeField]
+    MemoryBoardView _memoryBoardView;
 
 
     private void Start()
     {
 
-      
-        _memoryBoard.GetComponent<MemoryBoardView>().SetUpMemoryBoardView(new MemoryBoard(3, 3), _tilePrefab);
+        MemoryBoard tempBoard = new MemoryBoard(3, 3);
+        //_memoryBoard.GetComponent<MemoryBoardView>().SetUpMemoryBoardView(tempBoard, _tilePrefab);
+        _memoryBoardView.SetUpMemoryBoardView(tempBoard, _tilePrefab);
     }
 
 
