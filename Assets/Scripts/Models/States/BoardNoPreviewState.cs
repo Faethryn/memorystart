@@ -13,6 +13,7 @@ namespace Memory.Models.States
         public BoardNoPreviewState(MemoryBoard board) : base(board)
         {
             Board = board;
+            Debug.Log("in noPreviewState");
         }
 
         public override void AddPreview(Tile tile)
@@ -22,6 +23,7 @@ namespace Memory.Models.States
                 tile.State = new TilePreviewingState(tile);
                 Board.PreviewingTiles.Add(tile);
                 Board.State = new BoardOnePreviewState(Board);
+                Debug.Log("firstTileAdded");
             }
             else return;
         }

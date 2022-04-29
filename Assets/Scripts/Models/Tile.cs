@@ -29,7 +29,7 @@ public class Tile : ModelBaseClass
         Row = row;
         Column = column;
         Board = board;
-        State = new TileHiddenState(this);
+        _state = new TileHiddenState(this);
     }
 
     public override string ToString()
@@ -38,6 +38,10 @@ public class Tile : ModelBaseClass
         return returnText;
     }
 
+    public void TileAnimationEnded()
+    {
+        Board.TileAnimationEnded(this);
+    }
 
 
 }

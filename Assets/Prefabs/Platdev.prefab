@@ -91,10 +91,10 @@ BoxCollider:
   m_GameObject: {fileID: 4826781131147591760}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 0, z: 2}
-  m_Center: {x: 0, y: 0.099999994, z: 0}
+  m_Size: {x: 0.59524894, y: 0, z: 0.5945806}
+  m_Center: {x: -0.0054422617, y: 0.099999994, z: -0.025074035}
 --- !u!1 &5576079356538491329
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 6224760636450156564}
   - component: {fileID: 6413791260685740223}
   - component: {fileID: 4729728970334378284}
+  - component: {fileID: 874460123912656893}
   m_Layer: 0
   m_Name: Platdev
   m_TagString: Untagged
@@ -192,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8db1b9eb1a5c84ca8e7e8b515a30b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _front: {fileID: 7576615468104348331}
 --- !u!95 &4729728970334378284
 Animator:
   serializedVersion: 3
@@ -211,6 +213,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &874460123912656893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576079356538491329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.060000002, z: 0.6}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7576615468104348331
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +317,7 @@ BoxCollider:
   m_GameObject: {fileID: 7576615468104348331}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 0, z: 2}
-  m_Center: {x: 0, y: -0.099999994, z: 0}
+  m_Size: {x: 0.6589688, y: 0, z: 0.61923087}
+  m_Center: {x: 0.0063634515, y: -0.099999994, z: 0.07175873}

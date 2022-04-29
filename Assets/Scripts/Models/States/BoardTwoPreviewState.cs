@@ -11,7 +11,8 @@ namespace Memory.Models.States
         public override BoardStates State { get => BoardStates.TwoPreview; }
         public BoardTwoPreviewState(MemoryBoard board) : base(board)
         {
-            Board = board;
+            Board = board; 
+            Debug.Log("in TwoPreviewState");
         }
 
         public override void AddPreview(Tile tile)
@@ -21,7 +22,7 @@ namespace Memory.Models.States
 
         public override void TileAnimationEnded(Tile tile)
         {
-            if (tile == Board.PreviewingTiles[2])
+            if (tile == Board.PreviewingTiles[1])
             {
                 foreach (Tile previewingTile in Board.PreviewingTiles)
                 {

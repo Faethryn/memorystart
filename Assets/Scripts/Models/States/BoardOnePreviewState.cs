@@ -12,11 +12,13 @@ namespace Memory.Models.States
         public BoardOnePreviewState(MemoryBoard board) : base(board)
         {
             Board = board;
+            Debug.Log("in onePreviewState");
         }
 
         public override BoardStates State { get => BoardStates.OnePreview; }
         public override void AddPreview(Tile tile)
         {
+           
             if (tile.State.State == TileStates.Hidden)
             {
                 tile.State = new TilePreviewingState(tile);

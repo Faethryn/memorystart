@@ -19,16 +19,32 @@ public class MemoryBoard : ModelBaseClass
     private List<Tile> _previewingTiles;
     public List<Tile> PreviewingTiles { get { return _previewingTiles; } set { if (_previewingTiles == value) return;  _previewingTiles = value; OnPropertyChanged(); } }
 
-    public bool IsCombinationFound { get { if (PreviewingTiles.Count == 2) { return true; } else return false; }  }
+    public bool IsCombinationFound { get { if (PreviewingTiles.Count == 2 && PreviewingTiles[0].MemoryCardId == PreviewingTiles[1].MemoryCardId) { return true; } else return false; }  }
 
-    public BoardStateBaseClass State { get; set; }
+    private BoardStateBaseClass _state;
+    public BoardStateBaseClass State { get { return _state; } set { if (_state == value) return; _state = value; OnPropertyChanged(); } }
 
-    public MemoryBoard(int rows, int columns)
+    private Player _player1;
+    
+    public Player Player1 {  get { return _player1; } set { if (_player1 == value) return; _player1 = value; OnPropertyChanged(); } }
+
+    private Player _player2;
+
+    public Player Player2 { get { return _player2; } set { if (_player2 == value) return; _player2 = value; OnPropertyChanged(); } }
+
+    public MemoryBoard(int rows, int columns, Player player1, Player player2)
     {
         Rows = rows;
         Columns = columns;
         Tiles = new List<Tile>(Rows * Columns);
         AssignMemoryCardIds();
+        State = new BoardNoPreviewState(this);
+        _previewingTiles = new List<Tile>();
+
+        Player1 = player1;
+        Player2 = player2;
+
+
     }
 
     private void AssignMemoryCardIds()
@@ -38,12 +54,12 @@ public class MemoryBoard : ModelBaseClass
         {
             for (int j = 1; j <= Columns; j++)
             {
-                currentIndex += 1;
 
                 Tile temptile = new Tile(i, j, this);
-                int cardId = Mathf.RoundToInt(currentIndex / 2);
+                int cardId = Mathf.FloorToInt(currentIndex / 2);
                 temptile.MemoryCardId = cardId;
                 Tiles.Add(temptile);
+                currentIndex += 1;
 
             }
 
@@ -56,6 +72,11 @@ public class MemoryBoard : ModelBaseClass
     public override string ToString()
     {
         return $"Memoryboard({Rows}, {Columns})";
+    }
+
+    public void TileAnimationEnded(Tile sourceTile)
+    {
+        State.TileAnimationEnded(sourceTile);
     }
 
 }

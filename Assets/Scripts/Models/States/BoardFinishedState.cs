@@ -12,6 +12,7 @@ namespace Memory.Models.States
         public BoardFinishedState(MemoryBoard board) : base(board)
         {
             Board = board;
+            Debug.Log("in boardFinishedState");
         }
 
         public override void AddPreview(Tile tile)

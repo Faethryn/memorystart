@@ -13,6 +13,7 @@ namespace Memory.Models.States
         public BoardTwoFoundState(MemoryBoard board) : base(board)
         {
             Board = board;
+            Debug.Log("in TwoFoundState");
         }
 
         public override void AddPreview(Tile tile)
@@ -32,9 +33,26 @@ namespace Memory.Models.States
                 }
                 if (Board.PreviewingTiles.Count == 0)
                 {
+                    ToggleActivePlayer();
                     Board.State = new BoardNoPreviewState(Board);
                 }
             }
+        }
+        private void ToggleActivePlayer()
+        {
+            if (Board.Player1.IsActive)
+            {
+                Board.Player1.Score += 1;
+            }
+            if (Board.Player2.IsActive)
+            {
+                Board.Player2.Score += 1;
+            }
+
+            bool tempBoolPlayer1 = Board.Player1.IsActive;
+            bool tempBoolPlayer2 = Board.Player2.IsActive;
+            Board.Player1.IsActive = tempBoolPlayer2;
+            Board.Player2.IsActive = tempBoolPlayer1;
         }
     }
 

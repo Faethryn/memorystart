@@ -13,6 +13,8 @@ namespace Memory.Views
     {
 
         private Animator _animator;
+      
+       public GameObject _front;
 
         void Start()
         {
@@ -24,6 +26,8 @@ namespace Memory.Views
         public void OnPointerDown(PointerEventData eventData)
         {
             Model.Board.State.AddPreview(Model);
+         
+
         }
 
         protected override void Model_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -34,12 +38,12 @@ namespace Memory.Views
 
         private void StartAnimation()
         {
-            if (Model.State == new TilePreviewingState(Model))
+            if (Model.State.State == TileStates.Preview)
             {
                 _animator.Play("Shown");
 
             }
-            if (Model.State == new TileHiddenState(Model))
+            if (Model.State.State == TileStates.Hidden)
             {
                 _animator.Play("Hidden");
 
@@ -72,6 +76,7 @@ namespace Memory.Views
         public void AnimationCompleteHandler(string name)
         {
             Debug.Log($"{name} animation complete.");
+            Model.TileAnimationEnded();
 
         }
 
