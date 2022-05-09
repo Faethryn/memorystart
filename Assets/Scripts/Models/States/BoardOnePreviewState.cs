@@ -23,7 +23,7 @@ namespace Memory.Models.States
             {
                 tile.State = new TilePreviewingState(tile);
                 Board.PreviewingTiles.Add(tile);
-                Board.State = new BoardOnePreviewState(Board);
+                //Board.State = new BoardOnePreviewState(Board);
                 if (Board.IsCombinationFound)
                 {
                     Board.State = new BoardTwoFoundState(Board);
