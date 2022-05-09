@@ -32,8 +32,8 @@ namespace Memory.Views
                 GameObject tempTile = tilePrefab;
               
               GameObject tempObject =  Instantiate(tempTile, spawnLocation, new Quaternion(), this.gameObject.transform);
-               tempObject.GetComponent<TileView>()._front.GetComponent<MeshRenderer>().material = _materials[tile.MemoryCardId];
-                tempObject.GetComponent<TileView>().Model = tile;
+               tempObject.GetComponentInChildren<TileView>()._front.GetComponent<MeshRenderer>().material = _materials[tile.MemoryCardId];
+                tempObject.GetComponentInChildren<TileView>().Model = tile;
             }
         }
     }
