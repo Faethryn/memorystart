@@ -23,10 +23,12 @@ namespace Memory.Models.States
 
         public override void TileAnimationEnded(Tile tile)
         {
-            Board.PreviewingTiles.Remove(tile);
-            if (Board.PreviewingTiles.Count == 0)
+            
+           
+          
+            if (Board.PreviewingTiles[1] == tile)
             {
-               
+                Board.PreviewingTiles.Clear();
                 if (Board.Tiles.Where( t => t.State.State == TileStates.Hidden).Count() <2  )
                 {
                     Board.State = new BoardFinishedState(Board);
