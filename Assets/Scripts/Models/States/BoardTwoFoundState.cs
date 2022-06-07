@@ -29,14 +29,14 @@ namespace Memory.Models.States
             if (Board.PreviewingTiles[1] == tile)
             {
                 Board.PreviewingTiles.Clear();
-                if (Board.Tiles.Where( t => t.State.State == TileStates.Hidden).Count() <2  )
-                {
-                    Board.State = new BoardFinishedState(Board);
-                }
                 if (Board.PreviewingTiles.Count == 0)
                 {
                     ToggleActivePlayer();
                     Board.State = new BoardNoPreviewState(Board);
+                }
+                if (Board.Tiles.Where( t => t.State.State == TileStates.Hidden).Count() <2  )
+                {
+                    Board.State = new BoardFinishedState(Board);
                 }
             }
         }
