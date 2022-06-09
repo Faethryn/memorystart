@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Views\ViewBaseClass.cs" />
     <Compile Include="Assets\Scripts\Models\States\BoardStateBaseClass.cs" />
     <Compile Include="Assets\Scripts\Models\States\IBoardState.cs" />
+    <Compile Include="Assets\Scripts\Views\PlayerView.cs" />
     <Compile Include="Assets\Scripts\Models\States\TileHiddenState.cs" />
     <Compile Include="Assets\Scripts\Models\States\BoardTwoFoundState.cs" />
     <Compile Include="Assets\Scripts\Models\Tile.cs" />
@@ -74,10 +75,10 @@
     <Compile Include="Assets\Scripts\Views\MemoryBoardView.cs" />
     <Compile Include="Assets\Scripts\Models\States\TileStates.cs" />
     <Compile Include="Assets\Scripts\Models\MemoryBoard.cs" />
+    <Compile Include="Assets\Scripts\Models\Player.cs" />
     <Compile Include="Assets\Scripts\Models\States\TileFoundState.cs" />
     <Compile Include="Assets\Scripts\Models\States\BoardTwoPreviewState.cs" />
-    <Compile Include="Assets\Scripts\Models\Player.cs" />
-    <Compile Include="Assets\Scripts\Views\PlayerView.cs" />
+    <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

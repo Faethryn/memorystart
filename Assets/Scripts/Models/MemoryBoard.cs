@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Memory.Utilities;
 
 public class MemoryBoard : ModelBaseClass
 {
@@ -32,6 +33,10 @@ public class MemoryBoard : ModelBaseClass
 
     public Player Player2 { get { return _player2; } set { if (_player2 == value) return; _player2 = value; OnPropertyChanged(); } }
 
+
+    private List<int> _cardIds;
+
+
     public MemoryBoard(int rows, int columns, Player player1, Player player2)
     {
         Rows = rows;
@@ -56,8 +61,10 @@ public class MemoryBoard : ModelBaseClass
             {
 
                 Tile temptile = new Tile(i, j, this);
-                int cardId = Mathf.FloorToInt(currentIndex / 2);
-                temptile.MemoryCardId = cardId;
+               
+                //int cardId = Mathf.FloorToInt(currentIndex / 2);
+              
+                //temptile.MemoryCardId = cardId;
                 Tiles.Add(temptile);
                 currentIndex += 1;
 
@@ -65,8 +72,21 @@ public class MemoryBoard : ModelBaseClass
 
         }
 
+        ShuffleID();
        
 
+    }
+
+    private void ShuffleID()
+    {
+      Tiles =  Tiles.Shuffle<Tile>();
+
+        int passedIds = 0;
+        foreach( Tile tile in Tiles)
+        {
+            tile.MemoryCardId =  Mathf.FloorToInt(passedIds / 2); ;
+            passedIds += 1;
+        }
     }
 
     public override string ToString()
