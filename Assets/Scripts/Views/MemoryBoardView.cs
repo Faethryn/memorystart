@@ -9,16 +9,16 @@ namespace Memory.Views
 
     public class MemoryBoardView : ViewBaseClass<MemoryBoard>
     {
-        private List<Material> _materials;
+      
         protected override void Model_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             
         }
 
-        public void SetUpMemoryBoardView(MemoryBoard model, GameObject tilePrefab, List<Material> materials)
+        public void SetUpMemoryBoardView(MemoryBoard model, GameObject tilePrefab)
         {
             Model = model;
-            _materials = materials;
+           
             TileInstantiation(tilePrefab);
         }
 
@@ -32,7 +32,7 @@ namespace Memory.Views
                 GameObject tempTile = tilePrefab;
               
               GameObject tempObject =  Instantiate(tempTile, spawnLocation, new Quaternion(), this.gameObject.transform);
-               tempObject.GetComponentInChildren<TileView>()._front.GetComponent<MeshRenderer>().material = _materials[tile.MemoryCardId];
+               //tempObject.GetComponentInChildren<TileView>()._front.GetComponent<MeshRenderer>().material = _materials[tile.MemoryCardId];
                 tempObject.GetComponentInChildren<TileView>().Model = tile;
             }
         }

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Memory.Utilities;
+using Memory.Views;
 
 public class MemoryBoard : ModelBaseClass
 {
@@ -36,12 +37,15 @@ public class MemoryBoard : ModelBaseClass
 
     private List<int> _cardIds;
 
+   
 
-    public MemoryBoard(int rows, int columns, Player player1, Player player2)
+    public MemoryBoard(int rows, int columns, Player player1, Player player2 )
     {
         Rows = rows;
         Columns = columns;
         Tiles = new List<Tile>(Rows * Columns);
+        MakeTiles();
+
         AssignMemoryCardIds();
         State = new BoardNoPreviewState(this);
         _previewingTiles = new List<Tile>();
@@ -52,28 +56,63 @@ public class MemoryBoard : ModelBaseClass
 
     }
 
-    private void AssignMemoryCardIds()
-    {
-        int currentIndex = 0;
-        for (int i = 1; i <= Rows; i++)
-        {
-            for (int j = 1; j <= Columns; j++)
-            {
 
+    private void MakeTiles()
+    {
+        int currentIndex = 1;
+        List<Tile> temporaryTiles = new List<Tile>();
+       for (int i = 1; i <= Rows; i++)
+        {
+
+            for(int j = 1; j <= Columns; j++)
+            {
                 Tile temptile = new Tile(i, j, this);
-               
+
                 //int cardId = Mathf.FloorToInt(currentIndex / 2);
-              
+
                 //temptile.MemoryCardId = cardId;
-                Tiles.Add(temptile);
-                currentIndex += 1;
+               temporaryTiles.Add(temptile);
+
+               
 
             }
 
+           
         }
 
-        ShuffleID();
+        Tiles = temporaryTiles;
+    }
+
+    private void AssignMemoryCardIds()
+    {
+        ImageRepository repo = ImageRepository.Instance;
+        repo.ProcessImageIds(AssignMemoryCardIds);
+    }
+
+    private void AssignMemoryCardIds(List<int> memoryCardIds)
+    {
+        memoryCardIds = memoryCardIds.Shuffle();
+        List<Tile> shuffledTiles = Tiles.Shuffle();
+        int memoryCardIndex = 0;
+        Boolean first = true;
+        foreach (Tile tile in shuffledTiles)
+        {
+            tile.MemoryCardId = memoryCardIds[memoryCardIndex];
+            if (first)
+            {
+                first = false;
+            }
+            else
+            {
+                memoryCardIndex++;
+                first = true;
+            }
+        }
+
        
+
+
+
 
     }
 

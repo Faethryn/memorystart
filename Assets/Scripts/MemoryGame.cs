@@ -8,8 +8,8 @@ public class MemoryGame : MonoBehaviour
 {
     [SerializeField]
     private GameObject _tilePrefab;
-    [SerializeField]
-    private GameObject _memoryBoard;
+    //[SerializeField]
+    //private GameObject _memoryBoard;
 
     [SerializeField]
     MemoryBoardView _memoryBoardView;
@@ -20,8 +20,7 @@ public class MemoryGame : MonoBehaviour
     [SerializeField]
     private PlayerView _player2View;
 
-    [SerializeField]
-    private List<Material> _materials;
+    
 
 
     private void Start()
@@ -43,7 +42,7 @@ public class MemoryGame : MonoBehaviour
 
         MemoryBoard tempBoard = new MemoryBoard(3, 3, _player1View.Model, _player2View.Model );
         //_memoryBoard.GetComponent<MemoryBoardView>().SetUpMemoryBoardView(tempBoard, _tilePrefab);
-        _memoryBoardView.SetUpMemoryBoardView(tempBoard, _tilePrefab, _materials);
+        _memoryBoardView.SetUpMemoryBoardView(tempBoard, _tilePrefab);
 
 
     }

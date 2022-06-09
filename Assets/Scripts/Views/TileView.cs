@@ -34,6 +34,20 @@ namespace Memory.Views
         {
             if (e.PropertyName.Equals(nameof(Model.State)))
                 StartAnimation();
+           else if (e.PropertyName.Equals(nameof(Model.MemoryCardId)))
+                LoadFront();
+              
+            
+        }
+
+        private void LoadFront()
+        {
+            ImageRepository.Instance.GetProcessTexture(Model.MemoryCardId, LoadFront);
+        }
+
+        private void LoadFront(Texture2D texture)
+        {
+            _front.GetComponent<Renderer>().material.mainTexture = texture;
         }
 
         private void StartAnimation()
