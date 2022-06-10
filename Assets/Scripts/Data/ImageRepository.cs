@@ -9,7 +9,7 @@ using System.Linq;
 public class ImageRepository : Singleton<ImageRepository>
 {
 
-    string urlMemoryImages = "https://localhost:44304/api/Image";
+    string urlMemoryImages = "http://www.pd4imagewebservice.edu/api/Image";
 
     public void ProcessImageIds(Action<List<int>> processIds)
     {
