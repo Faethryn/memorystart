@@ -1,3 +1,4 @@
+using Assets.Scripts.Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,10 @@ namespace Memory.Models.States
         {
             if (tile == Board.PreviewingTiles[1])
             {
+                TileCombinationRepository tileCombinationRepository = TileCombinationRepository.Instance;
+
+                tileCombinationRepository.UploadTileCombination(Board.PreviewingTiles[0].Column, Board.PreviewingTiles[0].Row, Board.PreviewingTiles[1].Column, Board.PreviewingTiles[1].Row);
+
                 foreach (Tile previewingTile in Board.PreviewingTiles)
                 {
                     previewingTile.State = new TileHiddenState(previewingTile);
@@ -32,6 +37,11 @@ namespace Memory.Models.States
                 Board.State = new BoardTwoHidingState(Board);
             }
         }
+
+
+
+        
+
     }
 
 }

@@ -14,6 +14,10 @@ public class Player : ModelBaseClass
     private bool _isActive;
     public bool IsActive { get { return _isActive; } set { if (_isActive == value) return; _isActive = value; OnPropertyChanged(); } }
 
+    private bool _hasTakenTwoTurns;
+
+    public bool HasTakenTwoTurns { get { return _hasTakenTwoTurns; } set { if (_hasTakenTwoTurns == value) return; _hasTakenTwoTurns = value; OnPropertyChanged(); } }
+
     private float _elapsed;
     public float Elapsed { get { return _elapsed; } set { if (_elapsed == value) return; _elapsed = value; OnPropertyChanged(); } }
 

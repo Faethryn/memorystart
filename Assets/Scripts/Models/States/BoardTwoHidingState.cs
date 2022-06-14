@@ -34,10 +34,40 @@ namespace Memory.Models.States
 
         private void ToggleActivePlayer()
         {
+            if (Board.Player1.IsActive && Board.Player1.HasTakenTwoTurns == true)
+            {
+                Board.Player1.HasTakenTwoTurns = false;
+
+                ChangeActivePlayer();
+            }
+            else
+            if (Board.Player2.IsActive && Board.Player2.HasTakenTwoTurns == true)
+            {
+                Board.Player2.HasTakenTwoTurns = false;
+                ChangeActivePlayer();
+            }
+            else
+            if (Board.Player1.IsActive && Board.Player1.HasTakenTwoTurns == false)
+            {
+                Board.Player1.HasTakenTwoTurns = true;
+            }
+            else
+            if (Board.Player2.IsActive && Board.Player2.HasTakenTwoTurns == false)
+            {
+                Board.Player2.HasTakenTwoTurns = true;
+            }
+
+         
+        }
+
+        private void ChangeActivePlayer()
+        {
             bool tempBoolPlayer1 = Board.Player1.IsActive;
             bool tempBoolPlayer2 = Board.Player2.IsActive;
             Board.Player1.IsActive = tempBoolPlayer2;
             Board.Player2.IsActive = tempBoolPlayer1;
+            Board.Player1.HasTakenTwoTurns = false;
+            Board.Player2.HasTakenTwoTurns = false;
         }
     }
 

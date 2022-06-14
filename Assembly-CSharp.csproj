@@ -84,7 +84,9 @@
     <Compile Include="Assets\Scripts\Models\MemoryBoard.cs" />
     <Compile Include="Assets\Scripts\Models\Player.cs" />
     <Compile Include="Assets\Scripts\Models\States\TileFoundState.cs" />
+    <Compile Include="Assets\Scripts\Data\TileCombination.cs" />
     <Compile Include="Assets\Scripts\Models\States\BoardTwoPreviewState.cs" />
+    <Compile Include="Assets\Scripts\Data\TileCombinationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

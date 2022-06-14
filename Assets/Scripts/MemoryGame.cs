@@ -34,7 +34,9 @@ public class MemoryGame : MonoBehaviour
         _player1View.Model.Name = "Player 1";
         _player2View.Model.Name = "Player 2";
 
-        _player1View.Model.IsActive = true;
+        _player1View.Model.IsActive
+            
+            = true;
         _player2View.Model.IsActive = false;
 
         _player1View.Model.Score = 0;
